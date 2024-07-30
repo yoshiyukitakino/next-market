@@ -1,8 +1,8 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import connectDB from '@/app/utils/database';
 import { ItemModel } from '@/app/utils/schemaModels';
 
-export async function GET(request, context) {
+export async function GET(request: NextRequest, context: any) {
     try {
         const id = context.params.id;
         console.log(id)

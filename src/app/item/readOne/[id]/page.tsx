@@ -11,7 +11,7 @@ const getReadOne = async (id: string) => {
 }
 
 
-const ReadOnePage = async (context) => {
+const ReadOnePage = async (context: any) => {
     const id = context.params.id;
     const item = await getReadOne(id);
     return (

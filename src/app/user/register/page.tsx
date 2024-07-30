@@ -9,10 +9,10 @@ const RegisterPage = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleSubmit = async (e: any) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
-            const response = await fetch(API_URL, {
+            const response = await fetch(USER_REGISTER_API_URL, {
                 method: "POST",
                 headers: {
                     "Accept": "application/json",

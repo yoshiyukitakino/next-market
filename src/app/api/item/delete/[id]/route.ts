@@ -1,16 +1,12 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import connectDB from '@/app/utils/database';
 import { ItemModel } from '@/app/utils/schemaModels';
-
-interface Request {
-    json: () => Promise<any>;
-}
 
 interface Item {
     message: string;
 }
 
-export async function DELETE(request: Request, context): Promise<NextResponse> {
+export async function DELETE(request: NextRequest, context: any): Promise<NextResponse> {
     try {
         const id = context.params.id;
         const reqBody = await request.json()

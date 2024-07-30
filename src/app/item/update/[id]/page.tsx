@@ -5,7 +5,7 @@ import useAuth from "@/app/utils/useAuth";
 
 const READONE_API_URL = `${process.env.NEXT_PUBLIC_API_URL}/api/item/readone`;
 const UPDATE_API_URL = `${process.env.NEXT_PUBLIC_API_URL}/api/item/update`;
-const UpdateItemPage = (context) => {
+const UpdateItemPage = (context: any) => {
 
     const [title, setTitle] = useState("");
     const [price, setPrice] = useState("");
@@ -30,7 +30,7 @@ const UpdateItemPage = (context) => {
 
     }, [context]);
 
-    const handleSubmit = async (e: any) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
             const id = context.params.id;

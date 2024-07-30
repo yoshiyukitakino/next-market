@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const READONE_API_URL = `${process.env.NEXT_PUBLIC_API_URL}/api/item/readone`;
 const DELETE_API_URL = `${process.env.NEXT_PUBLIC_API_URL}/api/item/delete`;
-const DeleteItemPage = (context) => {
+const DeleteItemPage = (context: any) => {
     const [title, setTitle] = useState("")
     const [price, setPrice] = useState("")
     const [image, setImage] = useState("")
@@ -34,7 +34,7 @@ const DeleteItemPage = (context) => {
 
     }, [context]);
 
-    const handleSubmit = async (e: any) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
             const id = context.params.id;

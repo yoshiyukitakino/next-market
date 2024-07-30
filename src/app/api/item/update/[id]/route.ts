@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server';
 import connectDB from '@/app/utils/database';
 import { ItemModel } from '@/app/utils/schemaModels';
 
@@ -10,7 +10,7 @@ interface Item {
     message: string;
 }
 
-export async function PUT(request: Request, context): Promise<NextResponse> {
+export async function PUT(request: NextRequest, context: any): Promise<NextResponse> {
     const reqBody = await request.json();
     try {
         const id = context.params.id;

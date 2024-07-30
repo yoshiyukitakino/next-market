@@ -2,7 +2,7 @@
 import { useState } from "react";
 import useAuth from "@/app/utils/useAuth";
 
-const API_URL = `${process.env.NEXT_PUBLIC_API_URL}/api/item/create`;
+const CREATE_API_URL = `${process.env.NEXT_PUBLIC_API_URL}/api/item/create`;
 const CreateItemPage = () => {
 
     const [title, setTitle] = useState("");
@@ -11,10 +11,10 @@ const CreateItemPage = () => {
     const [description, setDescription] = useState("");
 
     const loginUserEmail = useAuth();
-    const handleSubmit = async (e: any) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
-            const response = await fetch(API_URL, {
+            const response = await fetch(CREATE_API_URL, {
                 method: "POST",
                 headers: {
                     "Accept": "application/json",

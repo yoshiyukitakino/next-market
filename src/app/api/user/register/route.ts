@@ -1,8 +1,8 @@
-import { NextResponse } from "next/server"
-import connectDB from "../../../utils/database"
-import { UserModel } from "../../../utils/schemaModels"
+import { NextRequest, NextResponse } from 'next/server'
+import connectDB from "@/app/utils/database"
+import { UserModel } from "@/app/utils/schemaModels"
 
-export async function POST(request) {
+export async function POST(request: NextRequest) {
     const reqBody = await request.json()
 
     try {

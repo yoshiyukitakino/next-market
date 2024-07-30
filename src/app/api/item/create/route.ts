@@ -1,16 +1,12 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server';
 import connectDB from '@/app/utils/database';
 import { ItemModel } from '@/app/utils/schemaModels';
-
-interface Request {
-    json: () => Promise<any>;
-}
 
 interface Item {
     message: string;
 }
 
-export async function POST(request: Request): Promise<NextResponse> {
+export async function POST(request: NextRequest): Promise<NextResponse> {
     const reqBody = await request.json();
     try {
 
